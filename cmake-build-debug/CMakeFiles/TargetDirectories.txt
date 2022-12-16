@@ -1,0 +1,3 @@
+/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles/edit_cache.dir
+/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles/AnonSietKlient.dir
