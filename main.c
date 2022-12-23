@@ -43,6 +43,16 @@ int main(int argc, char *argv[]) {
         printError("Chyba - server connect.");
     }
 
+    /*char msg[10];
+    fflush(stdout);
+    printf("Zadajte pocet uzlov (3-20): ");
+    scanf("%s", msg);*/
+    char msg[1024];
+    sprintf(msg, "10");
+    if (send(sock, msg, sizeof(msg), 0) < 0) {
+        printError("Chyba - send.");
+    }
+
     struct sockaddr_in entryNodeAddress;
     recv(sock, &entryNodeAddress, sizeof(entryNodeAddress), 0);
     close(sock);
