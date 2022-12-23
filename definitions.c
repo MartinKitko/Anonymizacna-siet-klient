@@ -44,14 +44,18 @@ void *data_readData(void *data) {
         bzero(buffer, BUFFER_LENGTH);
         if (read(pdata->socket, buffer, BUFFER_LENGTH) > 0) {
             char *posSemi = strchr(buffer, ':');
-            char *pos = strstr(posSemi + 1, endMsg);
-            if (pos != NULL && pos - posSemi == 2 && *(pos + strlen(endMsg)) == '\0') {
-                *(pos - 2) = '\0';
-                printf("Pouzivatel %s ukoncil komunikaciu.\n", buffer);
-                data_stop(pdata);
-            }
-            else {
+            if (posSemi == NULL) {
                 printf("%s\n", buffer);
+            } else {
+                char *pos = strstr(posSemi + 1, endMsg);
+                if (pos != NULL && pos - posSemi == 2 && *(pos + strlen(endMsg)) == '\0') {
+                    *(pos - 2) = '\0';
+                    printf("Pouzivatel %s ukoncil komunikaciu.\n", buffer);
+                    data_stop(pdata);
+                }
+                else {
+                    printf("%s\n", buffer);
+                }
             }
         }
         else {
