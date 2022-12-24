@@ -9,6 +9,7 @@ extern "C" {
 
 #define USER_LENGTH 10
 #define BUFFER_LENGTH 300
+#define NUM_NODES 20
 extern char *endMsg;
 
 typedef struct data {

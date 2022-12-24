@@ -11,8 +11,8 @@
 #include <pthread.h>
 
 int main(int argc, char *argv[]) {
-    if (argc < 4) {
-        printError("Klienta je nutne spustit s nasledujucimi argumentmi: adresa port pouzivatel.");
+    if (argc < 5) {
+        printError("Klienta je nutne spustit s nasledujucimi argumentmi: adresa port pouzivatel pocet_uzlov.");
     }
 
     //ziskanie adresy a portu servera <netdb.h>
@@ -25,6 +25,10 @@ int main(int argc, char *argv[]) {
         printError("Port musi byt cele cislo vacsie ako 0.");
     }
     char *userName = argv[3];
+    int pocetUzlov = atoi(argv[4]);
+    if (pocetUzlov < 3 || pocetUzlov > NUM_NODES) {
+        printError("Pocet uzlov musi byt v rozsahu od 3 do 20.");
+    }
 
     //vytvorenie socketu <sys/socket.h>
     int sock = socket(AF_INET, SOCK_STREAM, 0);
@@ -43,13 +47,9 @@ int main(int argc, char *argv[]) {
         printError("Chyba - server connect.");
     }
 
-    /*char msg[10];
-    fflush(stdout);
-    printf("Zadajte pocet uzlov (3-20): ");
-    scanf("%s", msg);*/
-    char msg[1024];
-    sprintf(msg, "10");
-    if (send(sock, msg, sizeof(msg), 0) < 0) {
+    char msg[BUFFER_LENGTH + 1];
+    sprintf(msg, "%s", argv[4]);
+    if (send(sock, msg, BUFFER_LENGTH, 0) < 0) {
         printError("Chyba - send.");
     }
 
