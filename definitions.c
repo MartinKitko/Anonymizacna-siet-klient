@@ -104,6 +104,73 @@ void *data_writeData(void *data) {
     return NULL;
 }
 
+void *receiveAndForward(void *arg) {
+    NODE *node = arg;
+    int BUFFER_SIZE = 1024;
+    char buffer[BUFFER_SIZE];
+    printf("Noda %d zacina.\n", node->id);
+
+    struct sockaddr_in connectingNodeAddress;
+    socklen_t connNodeAddrLength = sizeof(connectingNodeAddress);
+    int newSocket = accept(node->socketIn, (struct sockaddr *) &connectingNodeAddress, &connNodeAddrLength);
+    if (newSocket < 0) {
+        char msg[32];
+        sprintf(msg, "Chyba - node %d accept.", node->id);
+        printError(msg);
+    }
+
+    fd_set readfds;
+    struct timeval timeout;
+    int recvFrom, sendTo, received;
+
+    while (keepRunning) {
+        FD_ZERO(&readfds);
+        FD_SET(newSocket, &readfds);
+        FD_SET(node->socketOut, &readfds);
+
+        timeout.tv_sec = 5;
+        timeout.tv_usec = 0;
+
+        int result = select(FD_SETSIZE, &readfds, NULL, NULL, &timeout);
+        if (result < 0) {
+            printError("Chyba - node select.");
+            break;
+        } else if (result == 0) { // timeout
+            continue;
+        }
+
+        if (FD_ISSET(newSocket, &readfds)) {
+            recvFrom = newSocket;
+            sendTo = node->socketOut;
+        }
+
+        if (FD_ISSET(node->socketOut, &readfds)) {
+            recvFrom = node->socketOut;
+            sendTo = newSocket;
+        }
+
+        received = recv(recvFrom, buffer, BUFFER_SIZE, 0);
+
+        if (received < 0) {
+            char msg[32];
+            sprintf(msg, "Chyba - node %d recv.", node->id);
+            printError(msg);
+        } else if (received == 0) {
+            printf("Noda %d konci.\n", node->id);
+            break;
+        }
+
+        printf("Noda %d prijala spravu a posiela ju dalej.\n", node->id);
+
+        if (send(sendTo, buffer, received, 0) < 0) {
+            printError("Chyba - node send.");
+        }
+    }
+
+    close(newSocket);
+    return NULL;
+}
+
 void printError(char *str) {
     if (errno != 0) {
         perror(str);
