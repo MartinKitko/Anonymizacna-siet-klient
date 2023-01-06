@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/AnonSietKlient.dir/main.c.o CMakeFiles/AnonSietKlient.dir/definitions.c.o -o AnonSietKlient  -lpthread 
+/usr/bin/cc -g CMakeFiles/AnonSietKlient.dir/client_main.c.o CMakeFiles/AnonSietKlient.dir/client_definitions.c.o -o AnonSietKlient  -lpthread 

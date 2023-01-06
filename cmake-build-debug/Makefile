@@ -142,59 +142,59 @@ AnonSietKlient/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/build
 .PHONY : AnonSietKlient/fast
 
-definitions.o: definitions.c.o
+client_definitions.o: client_definitions.c.o
 
-.PHONY : definitions.o
-
-# target to build an object file
-definitions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/definitions.c.o
-.PHONY : definitions.c.o
-
-definitions.i: definitions.c.i
-
-.PHONY : definitions.i
-
-# target to preprocess a source file
-definitions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/definitions.c.i
-.PHONY : definitions.c.i
-
-definitions.s: definitions.c.s
-
-.PHONY : definitions.s
-
-# target to generate assembly for a file
-definitions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/definitions.c.s
-.PHONY : definitions.c.s
-
-main.o: main.c.o
-
-.PHONY : main.o
+.PHONY : client_definitions.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/main.c.o
-.PHONY : main.c.o
+client_definitions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/client_definitions.c.o
+.PHONY : client_definitions.c.o
 
-main.i: main.c.i
+client_definitions.i: client_definitions.c.i
 
-.PHONY : main.i
+.PHONY : client_definitions.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/main.c.i
-.PHONY : main.c.i
+client_definitions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/client_definitions.c.i
+.PHONY : client_definitions.c.i
 
-main.s: main.c.s
+client_definitions.s: client_definitions.c.s
 
-.PHONY : main.s
+.PHONY : client_definitions.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/main.c.s
-.PHONY : main.c.s
+client_definitions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/client_definitions.c.s
+.PHONY : client_definitions.c.s
+
+client_main.o: client_main.c.o
+
+.PHONY : client_main.o
+
+# target to build an object file
+client_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/client_main.c.o
+.PHONY : client_main.c.o
+
+client_main.i: client_main.c.i
+
+.PHONY : client_main.i
+
+# target to preprocess a source file
+client_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/client_main.c.i
+.PHONY : client_main.c.i
+
+client_main.s: client_main.c.s
+
+.PHONY : client_main.s
+
+# target to generate assembly for a file
+client_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AnonSietKlient.dir/build.make CMakeFiles/AnonSietKlient.dir/client_main.c.s
+.PHONY : client_main.c.s
 
 # Help Target
 help:
@@ -205,12 +205,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... AnonSietKlient"
-	@echo "... definitions.o"
-	@echo "... definitions.i"
-	@echo "... definitions.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... client_definitions.o"
+	@echo "... client_definitions.i"
+	@echo "... client_definitions.s"
+	@echo "... client_main.o"
+	@echo "... client_main.i"
+	@echo "... client_main.s"
 .PHONY : help
 
 

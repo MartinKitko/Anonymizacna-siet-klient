@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/tmp/tmp.EY6UosU1pT/definitions.c" "/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles/AnonSietKlient.dir/definitions.c.o"
-  "/tmp/tmp.EY6UosU1pT/main.c" "/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles/AnonSietKlient.dir/main.c.o"
+  "/tmp/tmp.EY6UosU1pT/client_definitions.c" "/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles/AnonSietKlient.dir/client_definitions.c.o"
+  "/tmp/tmp.EY6UosU1pT/client_main.c" "/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles/AnonSietKlient.dir/client_main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

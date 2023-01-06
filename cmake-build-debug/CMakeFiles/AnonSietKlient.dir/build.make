@@ -76,42 +76,42 @@ include CMakeFiles/AnonSietKlient.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AnonSietKlient.dir/flags.make
 
-CMakeFiles/AnonSietKlient.dir/main.c.o: CMakeFiles/AnonSietKlient.dir/flags.make
-CMakeFiles/AnonSietKlient.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/AnonSietKlient.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/AnonSietKlient.dir/main.c.o -c /tmp/tmp.EY6UosU1pT/main.c
+CMakeFiles/AnonSietKlient.dir/client_main.c.o: CMakeFiles/AnonSietKlient.dir/flags.make
+CMakeFiles/AnonSietKlient.dir/client_main.c.o: ../client_main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/AnonSietKlient.dir/client_main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/AnonSietKlient.dir/client_main.c.o -c /tmp/tmp.EY6UosU1pT/client_main.c
 
-CMakeFiles/AnonSietKlient.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AnonSietKlient.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/tmp.EY6UosU1pT/main.c > CMakeFiles/AnonSietKlient.dir/main.c.i
+CMakeFiles/AnonSietKlient.dir/client_main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AnonSietKlient.dir/client_main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/tmp.EY6UosU1pT/client_main.c > CMakeFiles/AnonSietKlient.dir/client_main.c.i
 
-CMakeFiles/AnonSietKlient.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AnonSietKlient.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/tmp.EY6UosU1pT/main.c -o CMakeFiles/AnonSietKlient.dir/main.c.s
+CMakeFiles/AnonSietKlient.dir/client_main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AnonSietKlient.dir/client_main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/tmp.EY6UosU1pT/client_main.c -o CMakeFiles/AnonSietKlient.dir/client_main.c.s
 
-CMakeFiles/AnonSietKlient.dir/definitions.c.o: CMakeFiles/AnonSietKlient.dir/flags.make
-CMakeFiles/AnonSietKlient.dir/definitions.c.o: ../definitions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/AnonSietKlient.dir/definitions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/AnonSietKlient.dir/definitions.c.o -c /tmp/tmp.EY6UosU1pT/definitions.c
+CMakeFiles/AnonSietKlient.dir/client_definitions.c.o: CMakeFiles/AnonSietKlient.dir/flags.make
+CMakeFiles/AnonSietKlient.dir/client_definitions.c.o: ../client_definitions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/AnonSietKlient.dir/client_definitions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/AnonSietKlient.dir/client_definitions.c.o -c /tmp/tmp.EY6UosU1pT/client_definitions.c
 
-CMakeFiles/AnonSietKlient.dir/definitions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AnonSietKlient.dir/definitions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/tmp.EY6UosU1pT/definitions.c > CMakeFiles/AnonSietKlient.dir/definitions.c.i
+CMakeFiles/AnonSietKlient.dir/client_definitions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/AnonSietKlient.dir/client_definitions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /tmp/tmp.EY6UosU1pT/client_definitions.c > CMakeFiles/AnonSietKlient.dir/client_definitions.c.i
 
-CMakeFiles/AnonSietKlient.dir/definitions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AnonSietKlient.dir/definitions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/tmp.EY6UosU1pT/definitions.c -o CMakeFiles/AnonSietKlient.dir/definitions.c.s
+CMakeFiles/AnonSietKlient.dir/client_definitions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/AnonSietKlient.dir/client_definitions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /tmp/tmp.EY6UosU1pT/client_definitions.c -o CMakeFiles/AnonSietKlient.dir/client_definitions.c.s
 
 # Object files for target AnonSietKlient
 AnonSietKlient_OBJECTS = \
-"CMakeFiles/AnonSietKlient.dir/main.c.o" \
-"CMakeFiles/AnonSietKlient.dir/definitions.c.o"
+"CMakeFiles/AnonSietKlient.dir/client_main.c.o" \
+"CMakeFiles/AnonSietKlient.dir/client_definitions.c.o"
 
 # External object files for target AnonSietKlient
 AnonSietKlient_EXTERNAL_OBJECTS =
 
-AnonSietKlient: CMakeFiles/AnonSietKlient.dir/main.c.o
-AnonSietKlient: CMakeFiles/AnonSietKlient.dir/definitions.c.o
+AnonSietKlient: CMakeFiles/AnonSietKlient.dir/client_main.c.o
+AnonSietKlient: CMakeFiles/AnonSietKlient.dir/client_definitions.c.o
 AnonSietKlient: CMakeFiles/AnonSietKlient.dir/build.make
 AnonSietKlient: CMakeFiles/AnonSietKlient.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/tmp/tmp.EY6UosU1pT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable AnonSietKlient"

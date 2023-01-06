@@ -76,13 +76,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/tmp/tmp.EY6UosU1pT/definitions.c">
+		<Unit filename="/tmp/tmp.EY6UosU1pT/client_definitions.c">
 			<Option target="AnonSietKlient"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.EY6UosU1pT/definitions.h">
+		<Unit filename="/tmp/tmp.EY6UosU1pT/client_definitions.h">
 			<Option target="AnonSietKlient"/>
 		</Unit>
-		<Unit filename="/tmp/tmp.EY6UosU1pT/main.c">
+		<Unit filename="/tmp/tmp.EY6UosU1pT/client_main.c">
 			<Option target="AnonSietKlient"/>
 		</Unit>
 		<Unit filename="/tmp/tmp.EY6UosU1pT/CMakeLists.txt">

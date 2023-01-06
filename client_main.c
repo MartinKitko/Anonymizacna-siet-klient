@@ -1,4 +1,4 @@
-#include "definitions.h"
+#include "client_definitions.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
         printError("Klienta je nutne spustit s nasledujucimi argumentmi: adresa port pouzivatel (pocet_uzlov).");
     }
 
-    //ziskanie adresy a portu servera <netdb.h>
+    // ziskanie adresy a portu servera
     struct hostent *server = gethostbyname(argv[1]);
     if (server == NULL) {
         printError("Server neexistuje.");
@@ -38,13 +38,13 @@ int main(int argc, char *argv[]) {
         sprintf(msg, "%d", 0);
     }
 
-    //vytvorenie socketu <sys/socket.h>
+    // vytvorenie socketu
     int sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock < 0) {
         printError("Chyba - socket.");
     }
 
-    //definovanie adresy servera <arpa/inet.h>
+    // definovanie adresy servera
     struct sockaddr_in serverAddress;
     bzero((char *) &serverAddress, sizeof(serverAddress));
     serverAddress.sin_family = AF_INET;
@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
         printError("Chyba - server connect.");
     }
 
-    //poslanie poctu uzlov na ktore sa chce pripojit, nic ak sa pripaja ako uzol
+    // poslanie poctu uzlov na ktore sa chce pripojit, nic ak sa pripaja ako uzol
     if (send(sock, msg, BUFFER_LENGTH, 0) < 0) {
         printError("Chyba - send.");
     }
@@ -69,22 +69,18 @@ int main(int argc, char *argv[]) {
             printError("Chyba - socket.");
         }
 
+        // pripojenie na vstupny uzol siete
         if (connect(sock, (struct sockaddr *) &entryNodeAddress, sizeof(entryNodeAddress)) < 0) {
             printError("Chyba - node connect.");
         }
 
-        //inicializacia dat zdielanych medzi vlaknami
         DATA data;
         data_init(&data, userName, sock);
-
-        //vytvorenie vlakna pre zapisovanie dat do socketu <pthread.h>
         pthread_t thread;
         pthread_create(&thread, NULL, data_writeData, (void *) &data);
 
-        //v hlavnom vlakne sa bude vykonavat citanie dat zo socketu
         data_readData((void *) &data);
 
-        //pockame na skoncenie zapisovacieho vlakna <pthread.h>
         pthread_join(thread, NULL);
         data_destroy(&data);
     } else { // pripojenie ako uzol
@@ -102,7 +98,7 @@ int main(int argc, char *argv[]) {
         }
         listen(socketIn, 10);
 
-        //recv from server it can send
+        // prijatie potvrdenia od servera
         if (recv(sock, msg, BUFFER_LENGTH, 0) < 0) {
             printError("Chyba - cont recv");
         }
@@ -123,6 +119,7 @@ int main(int argc, char *argv[]) {
         }
         close(sock);
         sock = socket(AF_INET, SOCK_STREAM, 0);
+        // pripojenie na nasledujucu nodu
         if (connect(sock, (struct sockaddr *) &nextNodeAddr, sizeof(nextNodeAddr)) < 0) {
             printError("Chyba - sock connect to next node.");
         }
@@ -138,7 +135,6 @@ int main(int argc, char *argv[]) {
         close(socketIn);
     }
 
-    //uzavretie socketu <unistd.h>
     close(sock);
 
     return (EXIT_SUCCESS);
