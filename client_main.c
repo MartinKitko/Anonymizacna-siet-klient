@@ -51,18 +51,22 @@ int main(int argc, char *argv[]) {
     bcopy((char *) server->h_addr, (char *) &serverAddress.sin_addr.s_addr, server->h_length);
     serverAddress.sin_port = htons(port);
 
+    // pripojenie na server
     if (connect(sock, (struct sockaddr *) &serverAddress, sizeof(serverAddress)) < 0) {
         printError("Chyba - server connect.");
     }
 
-    // poslanie poctu uzlov na ktore sa chce pripojit, nic ak sa pripaja ako uzol
+    // poslanie poctu uzlov na ktore sa chce pripojit, 0 ak sa pripaja ako uzol
     if (send(sock, msg, BUFFER_LENGTH, 0) < 0) {
         printError("Chyba - send.");
     }
 
     if (argc > 4) { // pripojenie ako koncovy pouzivatel
         struct sockaddr_in entryNodeAddress;
-        recv(sock, &entryNodeAddress, sizeof(entryNodeAddress), 0);
+        // prijatie adresy vstupneho uzla
+        if (recv(sock, &entryNodeAddress, sizeof(entryNodeAddress), 0) < 0) {
+            printError("Chyba - entry node addr recv");
+        }
         close(sock);
         sock = socket(AF_INET, SOCK_STREAM, 0);
         if (sock < 0) {
@@ -106,8 +110,8 @@ int main(int argc, char *argv[]) {
             printf("Server caka na poslanie node addr\n");
         }
 
-        printf("Posielanie client node addr\n");
         // poslanie adresy socketIn serveru
+        printf("Posielanie client node addr\n");
         if (send(sock, &socketInAddr, sizeof(socketInAddr), 0) < 0) {
             printError("Chyba - socketIn addr send");
         }

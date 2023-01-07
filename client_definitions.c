@@ -128,7 +128,7 @@ void *receiveAndForward(void *arg) {
         FD_SET(newSocket, &readfds);
         FD_SET(node->socketOut, &readfds);
 
-        timeout.tv_sec = 5;
+        timeout.tv_sec = 1;
         timeout.tv_usec = 0;
 
         int result = select(FD_SETSIZE, &readfds, NULL, NULL, &timeout);
